@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8"> <!--character encoding for UNICODE -->
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+        <meta http-equiv = "X-UA-Compatible" content ="ie=edge">
+        <title>Trails</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+<body>
+    <style>
+    body {
+        background-image: url('https://cdn.pixabay.com/photo/2017/12/23/19/00/autumn-3035783_960_720.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }    
+    </style>
+	<header>
+		<div class="main">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a class="active" href="search.html">Trails</a></li>
+				<li><a href="mapbox.html">Map</a></li>
+			</ul>
+		</div>
+	</header>
+    <div style ="position: absolute; left: 40%; top: 18%;">
+        <input type = "number" id = "lat" class = "lat" value = "30.2672" placeholder="Latitude" step = "0.0001">
+        <label class= "top">Latitude</label>
+    </div>
+    <div style ="position: absolute; left: 50%; top: 18%;">
+        <input type = "number" id = "lon" class = "lon" value = "-97.7431" placeholder="Longitude" step = "0.0001">
+        <label class= "top">Longitude</label>
+    </div>
+    <div style ="position: absolute; left: 60%; top: 16%;">
+        <input type = "submit" value = "Submit" class = "button">
+    </div>
+    <div style ="position: absolute; left: 25%; top: 25%;">
+        <input type = "text" value = "Austin" class = "local" placeholder = "City Name">
+        <label class= "top">Coordinate Lookup</label>
+
+    </div>
+<table class = "trailtable" style = "width:52%">
+    <tr>
+        <th style = "width: 34%">Trail Name</th>
+        <th style = "width: 8%">Rating (1-5)</th>
+        <th style = "width: 8%">Length (mi)</th>
+        <th style = "width: 2%">Map Link</th>
+    </tr>
+    <tr>
+    <td style="text-align: center" class = "trail0n">Trail 1</td>
+    <td style="text-align: center" class = "trail0r"></td>
+    <td style="text-align: center" class = "trail0l"></td>
+    <td><input type = "button" value = "map" class = "trail0b"></td>
+    </tr>
+    <td style="text-align: center" class = "trail1n">Trail 2</td>
+    <td style="text-align: center" class = "trail1r"></td>
+    <td style="text-align: center" class = "trail1l"></td>
+    <td><input type = "button" value = "map" class = "trail1b"></td>
+    <tr>
+    <td style="text-align: center" class = "trail2n">Trail 3</td>
+    <td style="text-align: center" class = "trail2r"></td>
+    <td style="text-align: center" class = "trail2l"></td>
+    <td><input type = "button" value = "map" class = "trail2b"></td>
+    </tr>
+    <td style="text-align: center" class = "trail3n">Trail 4</td>
+    <td style="text-align: center" class = "trail3r"></td>
+    <td style="text-align: center" class = "trail3l"></td>
+    <td><input type = "button" value = "map" class = "trail3b"></td>
+    <tr>
+    <td style="text-align: center" class = "trail4n">Trail 5</td>
+    <td style="text-align: center" class = "trail4r"></td>
+    <td style="text-align: center" class = "trail4l"></td>
+    <td><input type = "button" value = "map" class = "trail4b"></td>
+    </tr>
+</table>
+<table class = "weathertable" style = "width:35%">
+    <tr>
+        <th style = "width: 10%">Day</th>
+        <th style = "width: 6%">Max Temp (F)</th>
+        <th style = "width: 6%">Min Temp (F)</th>
+        <th style = "width: 13%">Description</th>
+    </tr>
+    <tr>
+       <td style="text-align: center" class = "day_return0">Day 1</td>
+       <td style="text-align: center" class = "temp0H">High</td>
+       <td style="text-align: center" class = "temp0L">Low</td>
+       <td style="text-align: center" class = "desc0">Daily Description</td>
+    </tr>
+    <tr>
+        <td style="text-align: center" class = "day_return1">Day 2</td>
+        <td style="text-align: center" class = "temp1H">High</td>
+        <td style="text-align: center" class = "temp1L">Low</td>
+        <td style="text-align: center" class = "desc1">Daily Description</td>
+    </tr>
+    <tr>
+        <td style="text-align: center" class = "day_return2">Day 3</td>
+        <td style="text-align: center" class = "temp2H">High</td>
+        <td style="text-align: center" class = "temp2L">Low</td>
+        <td style="text-align: center" class = "desc2">Daily Description</td>
+    </tr>
+    <tr>
+        <td style="text-align: center" class = "day_return3">Day 4</td>
+        <td style="text-align: center" class = "temp3H">High</td>
+        <td style="text-align: center" class = "temp3L">Low</td>
+        <td style="text-align: center" class = "desc3">Daily Description</td>
+    </tr>
+    <tr>
+        <td style="text-align: center" class = "day_return4">Day 5</td>
+        <td style="text-align: center" class = "temp4H">High</td>
+        <td style="text-align: center" class = "temp4L">Low</td>
+        <td style="text-align: center" class = "desc4">Daily Description</td>
+    </tr>
+    <tr>
+        <td style="text-align: center" class = "day_return5">Day 6</td>
+        <td style="text-align: center" class = "temp5H">High</td>
+        <td style="text-align: center" class = "temp5L">Low</td>
+        <td style="text-align: center" class = "desc5">Daily Description</td>
+    </tr>
+    <tr>
+        <td style="text-align: center" class = "day_return6">Day 7</td>
+        <td style="text-align: center" class = "temp6H">High</td>
+        <td style="text-align: center" class = "temp6L">Low</td>
+        <td style="text-align: center" class = "desc6">Daily Description</td>
+    </tr>
+</table>
+<table class = "ll" style = "width: 10%">
+    <tr>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    <tr>
+        <td style = "text-align: center" class = "lat_return">0.0000</td>
+        <td style = "text-align: center" class = "lon_return">0.0000</td>
+    </tr>
+</table>
+    
+    <script src="trails.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Nunito", sans-serif;
+}
+header{
+	background-image: url(hike.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+.logo img{
+	float: left;
+	height: auto;
+	width: 250px;
+}
+.title{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.title h1{
+	color: black;
+	font-size: 70px;
+}
+ul{
+	float: right;
+	margin-top: 25px;
+	margin-right: 25px;
+	list-style-type: none;
+}
+ul li{
+	display: inline-block;
+}
+ul li a{
+	text-decoration: none;
+	color: black;
+	padding: 5px 20px;
+	border: 1px solid black;
+	transition: .3s ease;
+}
+ul li a:hover{
+	background-color: black;
+	color: white;
+}
+li a.active{
+	background-color: black;
+	color: white;
+}
+
+:focus {
+    outline: 3px solid red;
+}

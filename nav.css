@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Nunito", sans-serif;
+	background-color: LightGrey;
+}
+ul{
+	float: right;
+	margin-top: 25px;
+	margin-right: 25px;
+	list-style-type: none;
+}
+ul li{
+	display: inline-block;
+}
+ul li a{
+	text-decoration: none;
+	color: black;
+	padding: 5px 20px;
+	border: 1px solid black;
+	transition: .3s ease;
+}
+ul li a:hover{
+	background-color: black;
+	color: white;
+}
+li a.active{
+	background-color: black;
+	color: white;
+}
+.about{
+	color: black;
+	line-height: 1.5;
+	font-size: 35px;
+	position: absolute;
+	top: 160px;
+	left: 150px;
+	right: 150px;
+}
+.contact{
+	color: black;
+	line-height: 1.5;
+	font-size: 35px;
+	position: absolute;
+	top: 160px;
+	left: 150px;
+	right: 150px;
+}
+
+:focus {
+    outline: 3px solid red;
+}

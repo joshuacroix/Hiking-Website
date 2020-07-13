@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+	float: right;
+	margin-top: 25px;
+	margin-right: 25px;
+	list-style-type: none;
+}
+ul li{
+	display: inline-block;
+}
+ul li a{
+	text-decoration: none;
+	color: black;
+	padding: 5px 20px;
+	border: 1px solid black;
+	transition: .3s ease;
+}
+ul li a:hover{
+	background-color: black;
+	color: white;
+}
+li a.active{
+	background-color: black;
+	color: white;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+.input {
+    text-align: center;
+    margin: auto;
+	position: absolute;
+	top: 100px;
+	left: 150px;
+	right: 150px;
+}
+
+input[type="text"] {
+    background: #e7e7e7;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 10px;
+}
+
+input[type="submit"] {
+    height: 50px;
+    width: 100px;
+    background: #e7e7e7;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+}
+
+input[type="submit"]:hover {
+    background-color: #b8aaaa;
+}
+
+.display {
+    text-align: center;
+	position: absolute;
+	top: 190px;
+	left: 150px;
+	right: 150px;
+}
+
+label {
+    position: absolute;
+}
+.right {
+    top: 0;
+    left: 100%
+}
+.left {
+    top: 0;
+    right: 100%;
+}
+.top {
+    bottom: 100%;
+    left: 0;
+}
+.bottom {
+    top: 100%;
+    left: 0;
+}
+
+.trailtable {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+
+.weathertable {
+    position: absolute;
+    top: 40%;
+    right: 60%;
+}
+
+.ll {
+    position: absolute;
+    top: 25%;
+    right: 40%; 
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+th, td {
+    padding: 2px;
+}
+tr {background-color: #f1f1f1;}
+tr:hover {background-color: #dbbaba;}
+
+:focus {
+    outline: 3px solid red;
+}

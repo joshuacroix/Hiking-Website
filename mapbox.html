@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+<!--mapbox map html setup-->
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="nav.css">
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 55px; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+	<header>
+		<div class="main">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="search.html">Trails</a></li>
+				<li><a class="active" href="mapbox.html">Map</a></li>
+			</ul>
+		</div>
+	</header>
+
+<!--mapbox geocoding html setup-->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" type="text/css" />
+<style>
+	.geocoder {
+		position: absolute;
+		z-index: 1;
+		width: 50%;
+		margin-left: -25%;
+		top: 10px;
+		right: 650px;
+	}
+	.mapboxgl-ctrl-geocoder {
+		min-width: 100%;
+	}
+	#map {
+		margin-top: 75px;
+	}
+</style>
+
+<!--Javascript setup-->
+<div id="map"></div>
+<div id="geocoder" class="geocoder"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoiam1ldCIsImEiOiJjazh0MHBxMm0wOWY3M3Bwa3J0endncmNoIn0.WX3OXCfGgxfNmNgjf2ug3w';
+
+	var placeLng;
+	var placeLat;
+	if (sessionStorage.getItem('lng') == null || sessionStorage.getItem('lat') == null) {
+		// defaults to College Station
+		placeLng = -96.3165;
+		placeLat = 30.6096;
+	} else {
+		// These variables are set by trails.js
+		placeLng = JSON.parse(sessionStorage.lng);
+		placeLat = JSON.parse(sessionStorage.lat);
+	}
+	
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center: [placeLng, placeLat],
+		zoom: 10
+	});
+	
+	var geocoder = new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken,
+		mapboxgl: mapboxgl
+	});
+	
+	document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+	map.on('load', function() {
+		map.addSource('point', {
+			'type': 'geojson',
+			'data': {
+				'type': 'Point',
+				'coordinates': [placeLng, placeLat]
+			}
+		});
+		
+		map.addLayer({
+			'id': 'point',
+			'source': 'point',
+			'type': 'circle',
+			'paint': {
+				'circle-radius': 10,
+				'circle-color': '#ed6498'
+			}
+		});
+	});
+</script>
+
+</body>
+</html>
